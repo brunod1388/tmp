@@ -6,7 +6,7 @@
 /*   By: gdufresn <gdufresn@student.42lausan>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 15:30:27 by gdufresn          #+#    #+#             */
-/*   Updated: 2022/02/07 15:54:39 by gdufresn         ###   ########.fr       */
+/*   Updated: 2022/02/07 17:27:37 by gdufresn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,20 @@
  * #Shell-Operation
 */
 
+#define TRUE 1
+#define FALSE 0
+
+typedef unsigned char	t_bool;
+
+typedef enum e_type
+{
+	T_TEXT = 0,
+	T_OPERATOR,
+}	t_type;
+
 typedef struct s_str_list
 {
+	t_type				type;
 	char				*str;
 	struct s_str_list	*next;
 }	t_str_list;
@@ -57,8 +69,9 @@ void		safe_free(void **memory);
 
 /* strings.c */
 int			str_len(char *str);
+char		*str_dup(char *str);
 char		*str_add_char(char *str, char c);
-char		*str_add_chars(char *a, char *b, int count);
+// char		*str_add_chars(char *a, char *b, int count);
 char		*str_add_str(char *a, char *b);
 
 /* str_list.c */

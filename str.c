@@ -6,7 +6,7 @@
 /*   By: gdufresn <gdufresn@student.42lausan>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 16:32:52 by gdufresn          #+#    #+#             */
-/*   Updated: 2022/02/07 15:52:59 by gdufresn         ###   ########.fr       */
+/*   Updated: 2022/02/07 17:27:31 by gdufresn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,22 @@ int	str_len(char *str)
 		while (str[len])
 			len++;
 	return (len);
+}
+
+char *str_dup(char *str)
+{
+	int		len;
+	int		i;
+	char	*mem;
+
+	len = str_len(str);
+	mem = malloc(len + 1);
+	if (!mem)
+		return (NULL);
+	i = -1;
+	while (++i < len)
+		mem[i] = str[i];
+	return (mem);
 }
 
 char	*str_add_char(char *str, char c)
@@ -44,6 +60,7 @@ char	*str_add_char(char *str, char c)
 	return (new);
 }
 
+/*
 char	*str_add_chars(char *a, char *b, int count)
 {
 	int		i;
@@ -66,6 +83,7 @@ char	*str_add_chars(char *a, char *b, int count)
 	safe_free((void **)&a);
 	return (new);
 }
+*/
 
 char	*str_add_str(char *a, char *b)
 {
