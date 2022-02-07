@@ -6,7 +6,7 @@
 /*   By: gdufresn <gdufresn@student.42lausan>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 15:30:29 by gdufresn          #+#    #+#             */
-/*   Updated: 2022/02/07 15:19:32 by gdufresn         ###   ########.fr       */
+/*   Updated: 2022/02/07 15:51:57 by gdufresn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static void	parse_single(t_parser *p)
 		}
 	}
 	printf("unclosed single!!\n");
-	safe_free(p->new_str);
+	safe_free((void **)&p->new_str);
 	p->new_str = NULL;
 }
 
@@ -101,7 +101,7 @@ static void	parse_double(t_parser *p)
 			p->new_str = str_add_char(p->new_str, p->input[p->i++]);
 	}
 	printf("unclosed double!!\n");
-	safe_free(p->new_str);
+	safe_free((void **)&p->new_str);
 	p->new_str = NULL;
 }
 

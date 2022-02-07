@@ -6,7 +6,7 @@
 /*   By: gdufresn <gdufresn@student.42lausan>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:15:17 by gdufresn          #+#    #+#             */
-/*   Updated: 2022/02/02 17:19:18 by gdufresn         ###   ########.fr       */
+/*   Updated: 2022/02/07 15:50:53 by gdufresn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ void	*malloc_zero(size_t size)
 	return (memory);
 }
 
-void	safe_free(void *memory)
+void	safe_free(void **memory)
 {
-	if (memory)
-		free(memory);
+	if (*memory)
+		free(*memory);
+	*memory = NULL;
 }

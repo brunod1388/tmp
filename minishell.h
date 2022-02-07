@@ -6,7 +6,7 @@
 /*   By: gdufresn <gdufresn@student.42lausan>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 15:30:27 by gdufresn          #+#    #+#             */
-/*   Updated: 2022/02/03 16:26:25 by gdufresn         ###   ########.fr       */
+/*   Updated: 2022/02/07 15:54:39 by gdufresn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef struct s_parser
 
 /* memory.c */
 void		*malloc_zero(size_t size);
-void		safe_free(void *memory);
+void		safe_free(void **memory);
 
 /* strings.c */
 int			str_len(char *str);

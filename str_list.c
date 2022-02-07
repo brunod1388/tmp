@@ -6,7 +6,7 @@
 /*   By: gdufresn <gdufresn@student.42lausan>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 16:01:00 by gdufresn          #+#    #+#             */
-/*   Updated: 2022/02/03 16:25:59 by gdufresn         ###   ########.fr       */
+/*   Updated: 2022/02/07 15:53:19 by gdufresn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ void	str_list_free(t_str_list *list)
 {
 	if (list && list->next)
 		str_list_free(list->next);
-	safe_free(list->str);
-	safe_free(list);
+	safe_free((void **)&list->str);
+	safe_free((void **)&list);
 }

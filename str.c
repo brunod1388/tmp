@@ -6,7 +6,7 @@
 /*   By: gdufresn <gdufresn@student.42lausan>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 16:32:52 by gdufresn          #+#    #+#             */
-/*   Updated: 2022/02/03 16:27:28 by gdufresn         ###   ########.fr       */
+/*   Updated: 2022/02/07 15:52:59 by gdufresn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*str_add_char(char *str, char c)
 		new[j++] = str[i++];
 	new[i] = c;
 	new[i + 1] = '\0';
-	safe_free(str);
+	safe_free((void **)&str);
 	return (new);
 }
 
@@ -63,7 +63,7 @@ char	*str_add_chars(char *a, char *b, int count)
 	while (b && i < count)
 		new[j++] = b[i++];
 	new[j] = '\0';
-	safe_free(a);
+	safe_free((void **)&a);
 	return (new);
 }
 
@@ -88,7 +88,7 @@ char	*str_add_str(char *a, char *b)
 	while (b && i < len_b)
 		new[j++] = b[i++];
 	new[j] = '\0';
-	safe_free(a);
-	safe_free(b);
+	safe_free((void **)&a);
+	safe_free((void **)&b);
 	return (new);
 }
