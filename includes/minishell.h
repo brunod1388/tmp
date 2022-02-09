@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdufresn <gdufresn@student.42lausan>       +#+  +:+       +#+        */
+/*   By: bgoncalv <bgoncalv@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 15:30:27 by gdufresn          #+#    #+#             */
-/*   Updated: 2022/02/07 17:27:37 by gdufresn         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:24:52 by bgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,7 @@ char		*str_add_str(char *a, char *b);
 t_str_list	*str_list_last(t_str_list *list);
 t_str_list	*str_list_add(t_str_list *list, char *new_str);
 void		str_list_free(t_str_list *list);
+
+t_str_list	*parse_input(char *input);
 
 #endif

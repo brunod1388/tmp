@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdufresn <gdufresn@student.42lausan>       +#+  +:+       +#+        */
+/*   By: bgoncalv <bgoncalv@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 15:30:29 by gdufresn          #+#    #+#             */
-/*   Updated: 2022/02/07 18:02:54 by gdufresn         ###   ########.fr       */
+/*   Created: 2022/02/09 15:24:39 by bgoncalv          #+#    #+#             */
+/*   Updated: 2022/02/09 15:24:51 by bgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,7 +152,7 @@ static void	parse_normal(t_parser *p)
 	add_string(p);
 }
 
-static t_str_list	*parse_input(char *input)
+t_str_list	*parse_input(char *input)
 {
 	t_parser	parser;
 	t_str_list	*str;
@@ -169,23 +169,5 @@ static t_str_list	*parse_input(char *input)
 	}
 	str_list_free(parser.result);
 	printf("\n");
-
 	return (NULL);
-}
-
-int	main(int argc, char **argv)
-{
-	char	*line;
-
-	(void)argc, (void)argv;
-	while (42)
-	{
-		line = readline("🍆 ");
-		if (line == NULL || line[0] == '\0')
-			continue ;
-		add_history(line);
-		parse_input(line);
-		//printf("%s\n", line);
-		free(line);
-	}
 }
