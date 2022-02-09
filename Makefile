@@ -6,7 +6,7 @@
 #    By: bgoncalv <bgoncalv@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/20 15:25:39 by gdufresn          #+#    #+#              #
-#    Updated: 2022/02/09 15:35:46 by bgoncalv         ###   ########.fr        #
+#    Updated: 2022/02/09 19:13:22 by bgoncalv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,9 @@ INCLUDES	=	-I includes/
 
 SRCS		=	$(wildcard srcs/parse/*.c) \
 				$(wildcard srcs/string/*.c) \
-				$(wildcard srcs/tools/*.c) \
+				$(wildcard srcs/utils/*.c) \
 				$(wildcard srcs/builtins/*.c) \
+				$(wildcard srcs/env/*.c) \
 				$(wildcard srcs/main/*.c)
 
 OBJS		=	$(SRCS:.c=.o)
@@ -54,5 +55,7 @@ re:			fclean all
 
 .PHONY:		all clean fclean re
 
+run:		re
+			./$(NAME)
 
 -include $(DEPS)

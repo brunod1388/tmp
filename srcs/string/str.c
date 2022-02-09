@@ -6,7 +6,7 @@
 /*   By: bgoncalv <bgoncalv@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 16:32:52 by gdufresn          #+#    #+#             */
-/*   Updated: 2022/02/09 15:18:39 by bgoncalv         ###   ########.fr       */
+/*   Updated: 2022/02/09 17:51:00 by bgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,26 @@ char *str_dup(char *str)
 	i = -1;
 	while (++i < len)
 		mem[i] = str[i];
+	mem[i] = 0;
+	return (mem);
+}
+
+char *str_ndup(char *str, int l)
+{
+	int		len;
+	int		i;
+	char	*mem;
+
+	len = str_len(str);
+	if (len > l)
+		len = l;
+	mem = malloc(len + 1);
+	if (!mem)
+		return (NULL);
+	i = -1;
+	while (++i < len)
+		mem[i] = str[i];
+	mem[i] = 0;
 	return (mem);
 }
 
