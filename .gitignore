@@ -2,3 +2,4 @@ minishell
 *.o
 *.d
 .vscode
+test*
