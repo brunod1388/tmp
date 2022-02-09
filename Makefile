@@ -6,7 +6,7 @@
 #    By: bgoncalv <bgoncalv@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/20 15:25:39 by gdufresn          #+#    #+#              #
-#    Updated: 2022/02/09 15:35:46 by bgoncalv         ###   ########.fr        #
+#    Updated: 2022/02/09 16:25:51 by gdufresn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ INCLUDES	=	-I includes/
 
 SRCS		=	$(wildcard srcs/parse/*.c) \
 				$(wildcard srcs/string/*.c) \
-				$(wildcard srcs/tools/*.c) \
+				$(wildcard srcs/utils/*.c) \
 				$(wildcard srcs/builtins/*.c) \
 				$(wildcard srcs/main/*.c)
 
